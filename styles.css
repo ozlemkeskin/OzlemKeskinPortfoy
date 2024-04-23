@@ -1,0 +1,894 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+:root {
+    --bg-color: #0b514c;
+    --second-bg-color:#07413c;
+    --text-color:#ededed;
+    --main-color:#5ac7c9;
+}
+
+html{
+    font-size:62.5%;
+    overflow-x:hidden;
+}
+
+body{
+   
+    background: url(/fotoğraflar/sade2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:var(--text-color);
+    overflow: auto;
+    animation: slide 20s linear infinite;
+    
+}
+
+.header{
+    position:fixed ;/* İçeriğin konumunu ayarlamak için */
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 2rem 9%;
+    background:transparent;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 100;
+    transition: .3s;
+    
+}
+.header.sticky{
+    background:var(--bg-color)
+  
+    
+}
+
+.logo img{
+    width: 120px;
+    height: 60px;
+   
+}
+
+.navbar a{
+    transition:0.3s;
+    font-size: 1.7rem;
+    color: var(--text-color) ;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    transition: .3s;
+    
+}
+
+.navbar a:hover,
+.navbar a.active {
+    
+    color:var(--main-color);
+  
+    
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor:pointer;
+    display: none;
+   
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home{
+display:flex ;
+align-items: center;
+padding: 0 9%;
+background: url('/fotoğraflar/arkaplan.png');
+background-position: center;
+background-position: 100% 100%;
+background-repeat: no-repeat;
+background-size: cover;
+box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+
+}
+
+
+
+.home-content{
+    max-width: 70rem;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.home-content .text-animate{
+    position:relative;
+    width: 36.2rem;
+   
+}
+
+.home-content .text-animate h3{
+    font-size: 3.2rem;
+    font-weight: 600;
+    color:transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+    background-image:linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: homeBgText 5s linear infinite;
+    animation-delay: 2s;
+}
+.home-content .text-animate h3::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: 0;
+    animation: homeCursorText 5s linear infinite;
+    animation-delay: 2s;
+}
+ .home-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+
+ }
+ .btn-box{
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 10rem;
+    left: 5rem;
+ }
+.btn-box .home-sci{
+    margin-top: 10px;
+}
+
+ .btn-box .btn{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index:1;
+    overflow: hidden;
+    transition: .5s;
+
+}
+.btn-box .btn:hover{
+    color:var(--main-color);
+}
+
+.btn-box .btn::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    background:var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+.btn-box .btn:hover::before{
+    width: 100%;
+
+}
+
+.download-cv-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin-top: -10px; /* Yukarı almak için negatif bir değer kullanabilirsiniz */
+}
+
+.download-cv-button:hover {
+  background-color: var(--second-bg-color);
+}
+.home-sci{
+   position: absolute; 
+   bottom: 4rem;
+   width: 170px;
+   display: flex;
+   justify-content: space-between;
+  
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* İkonların etrafına iç boşluk ekler */
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--bg-color);
+    border-radius: 50%;
+    font-size: 21px;
+    color:var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+}
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;  
+    transition: .5s;
+}
+.home-sci a:hover::before{
+    width: 100%;
+}
+
+.home-imageHover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    
+    transition: 3s;
+}
+.about{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap:2rem;
+   padding-bottom: 6rem;
+   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+.heading{
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align:center;
+
+}
+span{
+
+    color:var(--main-color);
+    
+}
+
+.about-img {
+    position: relative;
+    width: 70rem;
+    height: 60rem;
+    border-radius: 50%;
+    align-items: center;
+   
+}
+
+.about-img img {
+    position:relative; /* Resmin konumunu ayarlamak için */
+    top: 50; /* Yükseklikte ortalamak için */
+    left: 30%; /* Genişlikte ortalamak için */
+    width: 50%;
+   height: 25rem; /* Genişliği otomatik ayarlamak için */
+    max-width: 40%; /* Sayfa genişliğine göre en büyük genişlik */
+    max-height: 100%; /* Sayfa yüksekliğine göre en büyük yükseklik */
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    transition: transform 0.3s ease;
+    
+}
+.about-img:hover img {
+    transform: scale(1.1); /* 1.1 kat büyüt */
+}
+
+.about-content {
+    position: relative;
+    margin-top: -310px;
+    padding: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px var(--main-color);
+}
+
+.about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--second-bg-color);
+    z-index: -1;
+    transition: left 0.8s ease;
+}
+
+.about-content:hover::before {
+    left: 0;
+}
+
+.about-content h3{
+    text-align: center;
+    font-size: 3.6rem;
+    
+}
+.about-content p{
+    font-size: 1.5rem;
+    margin: 1rem 0 1rem;
+}
+.education{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.education .education-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.education-row .education-column{
+    flex:1 1 40rem;
+
+}
+.education-column .title{
+font-size: 2.5rem;
+margin: 0 0 1.5rem 2rem;
+
+}
+.education-column .education-box{
+    border-left: .2rem solid var(--main-color) ;
+}
+.education-box .education-content{
+    position: relative;
+    padding-left: 2rem;
+}
+.education-content .content{
+ position: relative;
+padding:1.5rem;
+border: .2rem solid var(--main-color);
+border-radius: .6rem;
+margin-bottom: 2rem;
+overflow: hidden;
+
+}
+
+ .education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background:var(--second-bg-color);
+    z-index: -1;
+   transition: .5s;
+}
+.education-content .content:hover::before{
+    width: 100%;
+}
+
+.education-content .content .year {
+    font-size: 1.5rem;
+    color:var(--main-color);
+    padding-bottom: .5rem ;
+}
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+.education-content .content  h3{
+    font-size: 2rem;
+}
+.education-content .content  p{
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+
+/* Sertifika Kartı */
+.certificate-card {
+    background-color: transparent; /* Kart arka plan rengi */
+    border: 2px solid var(--main-color); /* Kart kenarlık rengi ve kalınlığı */
+    border-radius: 8px; /* Kart köşe yuvarlama */
+    padding: 20px; /* Kart içi boşluk */
+    margin-bottom: 20px; /* Kartlar arası boşluk */
+    position: relative; /* Gölgelendirme için pozisyon belirleme */
+    transition: background-color 0.3s ease; /* Arka plan değişimi için geçiş efekti */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+/* Sertifika Kartı Hover Durumu */
+.certificate-card:hover {
+    background-color: var(--second-bg-color); /* Kartın üzerine gelindiğinde arka plan rengi değişimi */
+}
+.certificate-card .pdf-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.certificate-card .pdf-button:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+/* Sertifika Başlık */
+.certificate-title {
+    font-size: 18px; /* Başlık yazı boyutu */
+    font-weight: bold; /* Kalın font ağırlığı */
+    color: var(--text-color); /* Başlık yazı rengi */
+    margin-bottom: 10px; /* Başlık altındaki boşluk */
+}
+
+/* Sertifika Açıklama */
+.certificate-description {
+    font-size: 14px; /* Açıklama yazı boyutu */
+    color: var(--text-color); /* Açıklama yazı rengi */
+}
+
+/* Sertifika Tarih */
+.certificate-date {
+    font-size: 12px; /* Tarih yazı boyutu */
+    color: var(--main-color); /* Tarih yazı rengi */
+    margin-top: 10px; /* Tarih üstündeki boşluk */
+}
+
+.skills{
+    min-height:auto;
+    padding-bottom: 7rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+.skills .skills-row{
+display: flex;
+flex-wrap: wrap;
+gap:5rem;
+
+}
+
+.skills-row .skills-column{
+    flex: 1 1 40rem;
+}
+
+.skills-column .title{
+font-size: 2.5rem;
+margin: 0 0 1.5rem;
+}
+.skills-box .skills-content{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow:hidden;
+}
+.skills-box:hover .skills-content {
+    transform: scale(1.05);
+   
+}
+
+.skills-content .progres{
+    padding: 1rem 0;
+    transition: transform 0.3s ease; 
+}
+.skills-content .progres:hover {
+    transform: translateY(-9px); /* Fare üzerine gelince yukarı doğru kaydırma */
+}
+.skills-content .progres h3{
+   font-size: 1.9rem; 
+   display: flex;
+   justify-content: space-between;
+}
+.skills-content .progres h3 span{
+    color: var(--text-color);
+}
+.skills-content .progres .bar{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+.skills-content .progres .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+.skills-column:nth-child(1) .skills-content .progres:nth-child(1) .bar span {
+    width: 90%;
+}
+.skills-column:nth-child(1) .skills-content .progres:nth-child(2) .bar span {
+    width: 80%;
+}
+.skills-column:nth-child(1) .skills-content .progres:nth-child(3) .bar span {
+    width: 55%;
+}
+.skills-column:nth-child(1) .skills-content .progres:nth-child(4) .bar span {
+    width: 70%;
+}
+.skills-column:nth-child(1) .skills-content .progres:nth-child(5) .bar span {
+    width: 65%;
+}
+.skills-column:nth-child(2) .skills-content .progres:nth-child(1) .bar span {
+    width: 70%;
+}
+.skills-column:nth-child(2) .skills-content .progres:nth-child(2) .bar span {
+    width: 75%;
+}
+.skills-column:nth-child(2) .skills-content .progres:nth-child(3) .bar span {
+    width: 85%;
+}
+.skills-column:nth-child(2) .skills-content .progres:nth-child(4) .bar span {
+    width: 65%;
+}
+.skills-column:nth-child(2) .skills-content .progres:nth-child(5) .bar span {
+    width: 55%;
+}
+/*İLETİŞİM*/
+.contact{
+    min-height: auto;
+    padding-bottom: 7rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.contact form{
+    max-width: 90rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact form .input-box{
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box .input-field{
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea{
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size:1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border:.2rem solid var(--main-color);
+}
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+    color:var(--text-color)
+}
+
+.contact form .focus{
+position:absolute;
+top:0;
+left: 0;
+width: 0;
+height: 100%;
+background:var(--second-bg-color);
+border-radius: .6rem;
+z-index: -1;
+transition: .5s;
+}
+
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus {
+width: 100%;
+}
+
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+.contact form .textarea-field textarea{
+    resize: none;
+
+}
+.contact form .btn-box .btn{
+    cursor:pointer;
+    margin: 0 auto;
+    margin-right: -65px;
+    width: 150px; /* İstediğiniz genişliği ayarlayın */
+    height: 60px;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem 9%;
+    background-color: var(--bg-color);
+
+}
+.footer-contact {
+    color: #fff;
+   margin: -30;
+  }
+  
+  .footer-contact p {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact a {
+    color: #fff; 
+    text-decoration: none;
+   
+  }
+  
+  .footer-contact a:hover {
+    text-decoration: underline; /* Fare üzerine gelindiğinde altı çizili olarak görünecek */
+  }
+
+.footer-text p{
+    font-size: 1.5rem;
+}
+
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background:var(--main-color);
+    border: .2rem solid var(--main-color) ;
+    border-radius:.6rem ;
+    z-index:1 ;
+    overflow: hidden;
+}
+.footer-iconTop a::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+.footer-iconTop a:hover::before{
+width:100% ;
+}
+.footer-iconTop a i{
+    font-size: 2.4rem;
+color: var(--bg-color);
+transition: .5s;
+}
+.footer-iconTop a:hover i{
+    color:var(--main-color);
+}
+
+/* BREAKPOINTS*/
+@media (max-width:1200px){
+    html{
+        font-size:55%;
+    }
+}
+
+@media (max-width:992px){
+    .header {
+
+        padding: 1rem 1%;
+    }
+
+    section{
+        padding: 10rem 4% 2rem;
+    }
+    
+    .home .home-imageHover{
+        
+    }
+    .home {
+        padding: 0 4%;
+        background-size: 250% 120%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .contact form .btn-box {
+        text-align: right; /* Butonu sağa hizala */
+    }
+
+    .contact form .btn-box .btn {
+        margin-right:  8rem; /* Sağ boşluğu ayarla */
+    }
+}
+@media (max-width:755px){
+.header{
+    background: var(--bg-color);
+}
+
+#menu-icon{
+    display: block;
+}
+.navbar{
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    padding: 1rem 4%;
+    background: var(--bg-color);
+    box-shadow: 0 .5rem 1rem rgba(35, 169, 151, 0.099) ;
+    transition: .25s ease;
+    transition-delay: .25s;
+}
+.navbar.active{
+   left: 0;
+    transition-delay: 0s; 
+    
+}
+
+.navbar a{
+    display: flex;
+font-size: 1.7rem;
+margin: 1.5rem 0;
+gap: 1px;
+  }
+
+}
+
+@media (max-width:520px){
+    html{
+        font-size: 50%;
+    }
+    .home-content h1{
+        display:flex;
+        flex-direction: column;
+    }
+    .home-sci{
+        width:160px;
+
+    }
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+    }
+}
+@media (max-width:462px){
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+    .education{
+        padding:  10rem 4% 5rem 5%;
+    }
+    .contact form .input-box .input-field{
+        width: 100%;
+    }
+
+   .footer{
+    flex-direction: column-reverse;
+   }
+   .footer p{
+    margin-top: 2rem ;
+   text-align: center;
+   }
+}
+
+@media (max-width:371px){
+    .home{
+        justify-content: center;
+    }
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: end;
+        text-align:center ;
+    }
+    .home{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: end;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+}
+/*KEYFRAMES ANIMATION*/
+@keyframes homeBgText{
+    0%,
+    10%,
+    100%{
+        background-position: -50rem 0;  
+      }
+      65%,
+      85%{
+        background-position: 0 0;
+      }
+}
+@keyframes homeCursorText{
+    0%,
+    10%,
+    100%{
+        width: 0;  
+      }
+      65%,
+      78%,
+      85% {
+        width: 100;
+        opacity: 1;
+
+      }
+      75%,
+      81%{
+        opacity: 0;
+      }
+}
+@keyframes slide {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
